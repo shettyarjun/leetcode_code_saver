@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>file</title>
+    <link rel="stylesheet" href="/css/style2.css">
+</head>
+<body class="bg-zinc-800">
+    <div class="container" id="file-container">
+        <a href="/" class="link">Go to Home Page</a>
+
+        <div class="file-details" id="file-details">
+            <h1 class="file-title" id="file-title"><%= filename %></h1>
+
+            <div class="file-section" id="code-section">
+                <label for="code" class="label">Code:</label>
+                <pre class="code" id="code"><%= code %></pre>
+            </div>
+
+            <div class="file-section" id="details-section">
+                <label for="details" class="label">Details:</label>
+                <p class="details" id="details"><%= details %></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

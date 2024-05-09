@@ -1,0 +1,77 @@
+/* style2.css */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: "proxima-nova", sans-serif;
+    background: linear-gradient( 90deg, #000000, #313131);
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Link styles */
+.link {
+    display: block;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* File details styles */
+.file-title {
+    font-size: 40px;
+    font-size: larger;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.file-section {
+    margin-bottom: 20px;
+}
+
+/* Label styles */
+.label {
+    font-weight: bold;
+    color: #f9f9f9;
+    margin-bottom: 10px;
+
+}
+
+/* Code and details styles */
+.code,
+.details {
+    background-color: #4a4a4a;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-family: monospace;
+    color: #f9f9f9;
+    white-space: pre-wrap;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .file-title {
+        font-size: 20px;
+    }
+}

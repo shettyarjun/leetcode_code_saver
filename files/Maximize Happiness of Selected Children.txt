@@ -1,0 +1,39 @@
+INTUITION:
+The function maximizes happiness by selecting elements from a sorted list, taking into account diminishing returns as more elements are selected. It uses a strategy where high-value elements have a priority, ensuring that selections early on contribute the most happiness before penalties increase.
+
+APPROACH:
+Sort the List: Start by sorting the happiness list in descending order to prioritize higher values for early selection.
+Initialization: Set up counters for the number of selections (selected) and the total happiness score (happinessScore).
+Iterate with Condition: For each happiness value, add to the score only if it's positive after subtracting the selection count, stopping if k elements are selected.
+Return the Result: After processing up to k elements or exhausting the list, return the accumulated happiness score
+
+COMPLEXITY:
+Time:
+O(NlogN)
+
+Space:
+O(1)
+
+
+
+
+
+class Solution {
+public:
+    long long maximumHappinessSum(vector<int>& happiness, int k) {
+         sort(happiness.rbegin(), happiness.rend());
+
+        int kid = 0;
+        long long happinessScore = 0; 
+
+        for (int score : happiness) {
+            if (kid == k) {
+                break; 
+            }
+            happinessScore += max(0, score - kid);
+            kid++;
+        }
+
+        return happinessScore;
+    }
+};

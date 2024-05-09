@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <header id="header">
+        <img src="/images/logo.png" alt="LeetCode logo" class="logo" />
+        <h1 class="title">
+            Save your code Snippets and Ideas
+        </h1>
+    </header>
+    <main>
+        <div class="form-container" id="form-container">
+            <form action="/create" method="POST" class="forms">
+                <div class="form-input">
+                    <label for="title">Title:</label>
+                    <br />
+                    <input type="text" name="title" id="title" class="input" placeholder="Enter title" />
+                </div>
+                <div class="form-input">
+                    <label for="code">Code:</label>
+                    <br />
+                    <textarea class="textarea" name="code" id="code" cols="50" rows="10"
+                        placeholder="Enter code"></textarea>
+                </div>
+                <div class="form-input">
+                    <label for="details">Details:</label>
+                    <br />
+                    <textarea class="textarea" name="details" id="details" rows="5" cols="50"
+                        placeholder="Enter approach, intuition, complexity"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    Submit
+                </button>
+            </form>
+        </div>
+
+        <h1 class="code-history-title">Code history</h1>
+        <div class="code-history-tasks" id="code-history-tasks">
+            <% if (files.length === 0) { %>
+                <h3 class="no-code-message">No code yet</h3>
+            <% } else { %>
+                <% files.forEach((file) => { %>
+                    <div class="task">
+                        <div>
+                            <h1 class="file-title"><%= file.split(".txt").join("") %></h1>
+                            <a class="read-more-link" href="/show/<%= file %>">Read more</a>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+    </main>
+    <footer>
+        <script src="/javascript/script.js"></script>
+    </footer>
+</body>
+
+</html>
